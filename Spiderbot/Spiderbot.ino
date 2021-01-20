@@ -143,13 +143,13 @@ void homeLeg(bool _fwd, bool _right){
 
   if (_fwd){
     if (_right){
-      //FwdRA.write(0);
+      FwdRA.write(_posFwdRAHome);
       FwdRB.write(_posFwdRBHome);
       FwdRC.write(_posFwdRCHome);
       delay(250);
       }
     else if(!_right){
-      //FwdLA.write(6);
+      FwdLA.write(_posFwdLAHome);
       FwdLB.write(_posFwdLBHome);
       FwdLC.write(_posFwdLCHome);
       delay(250);
@@ -157,13 +157,13 @@ void homeLeg(bool _fwd, bool _right){
     }
    else if (!_fwd){
     if (_right){
-      //FwdRA.write(0);
+      FwdRA.write(_posAftRAHome);
       AftRB.write(_posAftRBHome);
       AftRC.write(_posAftRCHome);
       delay(250);
       }
     else if(!_right){
-      //FwdLA.write(6);
+      FwdLA.write(_posAftLAHome);
       AftLB.write(_posAftLBHome);
       AftLC.write(_posAftLCHome);
       delay(250);
