@@ -115,58 +115,58 @@ void extendLeg(bool _fwd, bool _right){
       }
     }
 }
-
-void homeLeg(bool _fwd, bool _right){
-  //take 2 bools to know which leg,
-  //then write home commands to
-  //servos B and C in the correct leg
-
-  int _posFwdRBHome = 0;
-  int _posFwdRCHome = 0;
-
-    // Fwd Right leg is the reference one
-    // all other legs derive their positions
-    // by transforming those of FwdR
-
-  int _posFwdLBHome = 0;
-  int _posFwdLCHome = 0;
-
-  int _posAftRBHome = 0;
-  int _posAftRCHome = 0;
-
-  int _posAftLBHome = 0;
-  int _posAftLCHome = 0;
-
-  if (_fwd){
-    if (_right){
-      //FwdRA.write(0);
-      FwdRB.write(_posFwdRBHome);
-      FwdRC.write(_posFwdRCHome);
-      delay(250);
-      }
-    else if(!_right){
-      //FwdLA.write(6);
-      FwdLB.write(_posFwdLBHome);
-      FwdLC.write(_posFwdLCHome);
-      delay(250);
-      }
-    }
-   else if (!_fwd){
-    if (_right){
-      //FwdRA.write(0);
-      AftRB.write(_posAftRBHome);
-      AftRC.write(_posAftRCHome);
-      delay(250);
-      }
-    else if(!_right){
-      //FwdLA.write(6);
-      AftLB.write(_posAftLBHome);
-      AftLC.write(_posAftLCHome);
-      delay(250);
-      }
-    }
-  }
-
-void advanceLeg(bool _fwd, bool _right, int _deg /*degrees to advance*/) {
-  /* code */
-}
+//
+// void homeLeg(bool _fwd, bool _right){
+//   //take 2 bools to know which leg,
+//   //then write home commands to
+//   //servos B and C in the correct leg
+//
+//   int _posFwdRBHome = 0;
+//   int _posFwdRCHome = 0;
+//
+//     // Fwd Right leg is the reference one
+//     // all other legs derive their positions
+//     // by transforming those of FwdR
+//
+//   int _posFwdLBHome = 0;
+//   int _posFwdLCHome = 0;
+//
+//   int _posAftRBHome = 0;
+//   int _posAftRCHome = 0;
+//
+//   int _posAftLBHome = 0;
+//   int _posAftLCHome = 0;
+//
+//   if (_fwd){
+//     if (_right){
+//       //FwdRA.write(0);
+//       FwdRB.write(_posFwdRBHome);
+//       FwdRC.write(_posFwdRCHome);
+//       delay(250);
+//       }
+//     else if(!_right){
+//       //FwdLA.write(6);
+//       FwdLB.write(_posFwdLBHome);
+//       FwdLC.write(_posFwdLCHome);
+//       delay(250);
+//       }
+//     }
+//    else if (!_fwd){
+//     if (_right){
+//       //FwdRA.write(0);
+//       AftRB.write(_posAftRBHome);
+//       AftRC.write(_posAftRCHome);
+//       delay(250);
+//       }
+//     else if(!_right){
+//       //FwdLA.write(6);
+//       AftLB.write(_posAftLBHome);
+//       AftLC.write(_posAftLCHome);
+//       delay(250);
+//       }
+//     }
+//   }
+//
+// void advanceLeg(bool _fwd, bool _right, int _deg /*degrees to advance*/) {
+//   /* code */
+// }
