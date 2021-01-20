@@ -17,12 +17,6 @@
   Servo AftLB;
   Servo AftLC;
 
-  int posAHome = 0;
-  int posBHome = 0;
-  int posCHome = 0;
-
-
-
 
 void setup() {
 
@@ -44,23 +38,23 @@ void setup() {
   AftLB.attach(10);
   AftLC.attach(11);
 
-  //write home positions to the servos
-
-  FwdRA.write(posAHome);
-  FwdRB.write(posBHome);
-  FwdRC.write(posCHome);
-
-  AftRA.write(posAHome);
-  AftRB.write(posBHome);
-  AftRC.write(posCHome);
-
-  FwdLA.write(posAHome);
-  FwdLB.write(posBHome);
-  FwdLC.write(posCHome);
-
-  AftLA.write(posAHome);
-  AftLB.write(posBHome);
-  AftLC.write(posCHome);
+  // //write home positions to the servos
+  //
+  // FwdRA.write(posAHome);
+  // FwdRB.write(posBHome);
+  // FwdRC.write(posCHome);
+  //
+  // AftRA.write(posAHome);
+  // AftRB.write(posBHome);
+  // AftRC.write(posCHome);
+  //
+  // FwdLA.write(posAHome);
+  // FwdLB.write(posBHome);
+  // FwdLC.write(posCHome);
+  //
+  // AftLA.write(posAHome);
+  // AftLB.write(posBHome);
+  // AftLC.write(posCHome);
 
   delay(1000); //wait one second
 
@@ -76,21 +70,21 @@ void extendLeg(bool _fwd, bool _right){
   //then write extension commands to
   //servos B and C in the correct leg
 
-  int _posFwdRBExtend = 0;
-  int _posFwdRCExtend = 0;
+  int _posFwdRBExtend = 90;
+  int _posFwdRCExtend = 180;
 
   // Fwd Right leg is the reference one
   // all other legs derive their positions
   // by transforming those of FwdR
 
-  int _posFwdLBExtend = 0;
-  int _posFwdLCExtend = 0;
+  int _posFwdLBExtend = _posFwdRBExtend;
+  int _posFwdLCExtend = _posFwdRCExtend;
 
-  int _posAftRBExtend = 0;
-  int _posAftRCExtend = 0;
+  int _posAftRBExtend = 180 - _posFwdRBExtend;
+  int _posAftRCExtend = 180 - _posFwdRCExtend;
 
-  int _posAftLBExtend = 0;
-  int _posAftLCExtend = 0;
+  int _posAftLBExtend = 180 - _posFwdRBExtend;
+  int _posAftLCExtend = 180 - _posFwdRCExtend;
 
   if (_fwd){
     if (_right){
