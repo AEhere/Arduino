@@ -1,5 +1,6 @@
 
   #include <Servo.h>
+  #include <Adafruit_PWMServoDriver.h>
 
   Servo FwdRA;  //Forward Right leg, servo A (body to coxa)
   Servo FwdRB;  //Forward Right leg, servo B (coxa to femur)
