@@ -22,9 +22,9 @@ void setup() {
 
   //attach the servos to their pins
 
-  FwdRA.attach(3);
-  FwdRB.attach(4);
-  FwdRC.attach(5);
+  FwdRA.attach(2);
+  FwdRB.attach(3);
+  FwdRC.attach(4);
 //
 //  AftRA.attach(3);
 //  AftRB.attach(4);
@@ -63,32 +63,38 @@ void setup() {
 
   delay(1000); //wait one second
 
+  FwdRA.write(90); // Spread legs into their central positions
+  FwdLA.write(90);
+  AftRA.write(90);
+  AftLA.write(90);
+
+  delay(1000); //wait one second
+
+  plantLeg('True','True'); //plant all 4 legs
+  plantLeg('True','False');
+  plantLeg('False','True');
+  plantLeg('False','False');
+
+  delay(1000); //wait one second
+
+  retractLeg(1,1);
+  retractLeg(0,0);
+
+  FwdRA.write(120);
+  FwdLA.write(90);
+  AftRA.write(90);
+  AftLA.write(120);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
 
-    FwdRA.write(60); //prep leg for advance
-    // FwdRB.write(0);
-    // FwdRC.write(0);
-  delay(500);
-  plantLeg('True','True');
-  delay(500);
-    FwdRA.write(30); //prep leg for advance
-    // FwdRB.write(0);
-    // FwdRC.write(0);
-  delay(500);
-  retractLeg('True','True');
-  delay(500);
-  // extendLeg('True','True');
-  // delay(500);
-  // retractLeg('True','True');
-  // delay(500);
-  // plantLeg('True','True');
-  // delay(500);
-
-
-
+  // retractLeg(1,1);
+  // retractLeg(0,0);
+  //
+  // FwdRA.write(120);
+  // FwdLA.write(90);
+  // AftRA.write(90);
+  // AftLA.write(120);
 
 }
 
